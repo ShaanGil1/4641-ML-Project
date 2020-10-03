@@ -1,32 +1,10 @@
 ## CS 4641 - Financial Data Machine Learning Project Proposal
 
-You can use the [editor on GitHub](https://github.com/mchakka/4641-ML-Project/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[Video Link For Proposal](https://youtu.be/WorlYZWGzrU)
 
 ### Introduction/Background
 
 Aggregate data is available on stock prices and company financial reports that are often used by investment firms to make decisions. With thousands of stocks being traded daily, it is impossible to use all the information manually to make informed decisions [1]. Using a machine learning approach, it is possible to better predict the relations between all stocks that are being traded and to predict market trends.
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[https://youtu.be/WorlYZWGzrU](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Problem Definition
 
@@ -43,3 +21,12 @@ With the two goals of the project, the first is to cluster stock data that moves
 ### Discussion
 
 A lot of the initial time investment will go into researching financial indicators and determining a good financial data set, many of which are readily found online. After developing the preliminary financial knowledge, the data can be feature extracted to use with machine learning techniques. The project checkpoint will be to ensure that the extracted features can be input into ML learning algorithms to determine preliminary results. After this point, pre-processing and different techniques can be applied to generate a more accurate model. For evaluation, it will be worthwhile to perform a holistic overview of the market to determine what external factors could have affected the accuracy of the model.
+
+### References
+[1] Didur, K. (2018, July 11). Machine learning in finance: Why, what & how. https://towardsdatascience.com/machine-learning-in-finance-why-what-how-d524a2357b56. 
+[2] Lv, D., Yuan, S., Li, M., & Xiang, Y. (2019, April 14). An Empirical Study of Machine Learning Algorithms for Stock Daily Trading Strategy. https://www.hindawi.com/journals/mpe/2019/7816154/. 
+[3] Chen, J. (2010). SVM application of financial time series forecasting using empirical technical indicators. https://ieeexplore.ieee.org/abstract/document/5636430. 
+[4] Tay, F. E. H., & Cao, L. (2001, June 28). Application of support vector machines in financial time series forecasting. Omega. https://www.sciencedirect.com/science/article/pii/S0305048301000263. 
+[5] Zhang, J., Cui, S., Xu, Y., Li, Q., & Li, T. (2017, December 13). A novel data-driven stock price trend prediction system. Expert Systems with Applications.https://www.sciencedirect.com/science/article/pii/S0957417417308485. 
+[6] Patel, J., Shah, S., Thakkar, P., & Kotecha, K. (2014, August 5). Predicting stock and stock price index movement using Trend Deterministic Data Preparation and machine learning techniques. Expert Systems with Applications.https://www.sciencedirect.com/science/article/pii/S0957417414004473. 
+[7] Huang, J., Chai, J. & Cho, S. Deep learning in finance and banking: A literature review and classification. Front. Bus. Res. China 14, 13 (2020). https://doi.org/10.1186/s11782-020-00082-6 
