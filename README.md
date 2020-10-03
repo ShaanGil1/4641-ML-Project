@@ -1,5 +1,5 @@
-## CS 4641 - Financial Data Machine Learning Project Proposal
-# Manas Chakka, Sidhant Bhatia, Shaan Gill, Atman Patel, Thomas Napolitano
+# CS 4641 - Financial Data Machine Learning Project Proposal
+## Manas Chakka, Sidhant Bhatia, Shaan Gill, Atman Patel, Thomas Napolitano
 
 [Video Link For Proposal](https://youtu.be/WorlYZWGzrU)
 
