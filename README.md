@@ -23,7 +23,7 @@ With the two goals of the project, the first is to cluster stock data that moves
 A lot of the initial time investment will go into researching financial indicators and determining a good financial data set, many of which are readily found online. After developing the preliminary financial knowledge, the data can be feature extracted to use with machine learning techniques. The project checkpoint will be to ensure that the extracted features can be input into ML learning algorithms to determine preliminary results. After this point, pre-processing and different techniques can be applied to generate a more accurate model. For evaluation, it will be worthwhile to perform a holistic overview of the market to determine what external factors could have affected the accuracy of the model.
 
 ### References
-[1] Didur, K. (2018, July 11). Machine learning in finance: Why, what & how. https://towardsdatascience.com/machine-learning-in-finance-why-what-how-d524a2357b56.\ 
+[1] Didur, K. (2018, July 11). Machine learning in finance: Why, what & how. https://towardsdatascience.com/machine-learning-in-finance-why-what-how-d524a2357b56. \ 
 [2] Lv, D., Yuan, S., Li, M., & Xiang, Y. (2019, April 14). An Empirical Study of Machine Learning Algorithms for Stock Daily Trading Strategy. https://www.hindawi.com/journals/mpe/2019/7816154/. \
 [3] Chen, J. (2010). SVM application of financial time series forecasting using empirical technical indicators. https://ieeexplore.ieee.org/abstract/document/5636430. \
 [4] Tay, F. E. H., & Cao, L. (2001, June 28). Application of support vector machines in financial time series forecasting. Omega. https://www.sciencedirect.com/science/article/pii/S0305048301000263. \
