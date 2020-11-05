@@ -52,21 +52,21 @@ No manipulation other than the offset was done to the features as during this ap
 
 After finding the centroids, we graphed the data on a scatter plot:
 
-![img](https://ibb.co/M5ZFVYk)
+![img](https://i.ibb.co/jZbnMck/Picture1.png)
  
 The orange points represent the centroids, and the blue points represent the averages for the stocks.  The X-axis represents the avg (Open) – avg (Close) for each of the stocks and the Y-axis represents the avg (High) – avg (Low).  The results show only two clusters as we only currently have seven stocks currently being used.  More stocks and clusters will need to be added to make this graph show any sort of results.
 
 
 #### KNN - General Stock Classification
 Given our result from running the KNN algorithm we generated the confusion matrix:
-![img](https://ibb.co/1002sVZ)
+![img](https://i.ibb.co/sgg35Sj/Picture2.png)
  
 We then generated our classification report: 
-![img](https://ibb.co/q0NB0J1)
+![img](https://i.ibb.co/B4yL4ns/Picture3.png)
  
 Given this, we had fairly good results, and the model was pretty accurate in finding out which stock the data belonged to.  
 
-![img](https://ibb.co/v16q7N4)
+![img](https://i.ibb.co/4Wnt6bR/Picture4.png)
 We then graphed the error and found the minimum error would be when the K-value is around 6.  Changing K to 6 instead of 5 would optimize this algorithm and minimize errors.  
 
 #### OneClassSVM - Volatility Classification
