@@ -14,7 +14,7 @@
 
 For our data collection, we ended up using the SimFin API for data to use for analysis and machine learning. The API contained a bunch of stock and company financial data but we specifically decided to use the dataset on share prices in order to cluster stocks that move in similar patterns. The SimFin API had simple tutorials on how to extract data, and we were just able to remove columns in the dataset that were unrelated to the goal of our project and as a result, we concentrated on the data in the Open, Close, High, Low columns for our analysis. 
 
-At least for very early analysis, we specifically chose about 10 different stocks and for each stock, we took data from the most recent 100 days. For exact implementation of our process to extract and clean data, please refer to the code in our GitHub repository. 
+At least for very early analysis, we specifically chose about 10 different stocks and for each stock, we took data from the most recent 100 days. We plan to scale this up as we work on this project and possibly building out testing and training datasets. For exact implementation of our process to extract and clean data, please refer to the code in our GitHub repository.
 
 
 ### Methods
