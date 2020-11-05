@@ -1,7 +1,7 @@
 ## CS 4641 - Financial Data Machine Learning Midterm Report
 #### Manas Chakka, Sidhant Bhatia, Shaan Gill, Atman Patel, Thomas Napolitano
 
-[Link to Project Proposal](mchakka.github.io/4641-ML-Project/README)
+[Link to Project Proposal](https://mchakka.github.io/4641-ML-Project/)
 
 ### Introduction/Background
 
