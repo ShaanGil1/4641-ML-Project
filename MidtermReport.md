@@ -5,11 +5,10 @@
 
 ### Introduction/Background
 
-Aggregate data is available on stock prices and company financial reports that are often used by investment firms to make decisions. With thousands of stocks being traded daily, it is impossible to use all the information manually to make informed decisions [1]. Using a machine learning approach, it is possible to better predict the relations between all stocks that are being traded and to predict market trends.
+
 
 ### Problem Definition
 
-There are thousands of records of temporal stock market data that can be used to model the stock market. Due to the volatility of the stock market and real-world effects, it is difficult to create an accurate model to predict financial data. The particular issues that will be tackled in this project are tentatively: using temporal stock market data to identify clusters and identify relationships between clusters (unsupervised learning), and to use financial report data for an indication of stock price (supervised learning).
 
 ### Data Collection
 
