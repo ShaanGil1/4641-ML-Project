@@ -1,7 +1,7 @@
-## CS 4641 - Financial Data Machine Learning Project Proposal
+## CS 4641 - Financial Data Machine Learning Midterm Report
 #### Manas Chakka, Sidhant Bhatia, Shaan Gill, Atman Patel, Thomas Napolitano
 
-[Video Link For Proposal](https://youtu.be/WorlYZWGzrU)
+[Link to Project Proposal](mchakka.github.io/4641-ML-Project/README)
 
 ### Introduction/Background
 
@@ -11,11 +11,14 @@ Aggregate data is available on stock prices and company financial reports that a
 
 There are thousands of records of temporal stock market data that can be used to model the stock market. Due to the volatility of the stock market and real-world effects, it is difficult to create an accurate model to predict financial data. The particular issues that will be tackled in this project are tentatively: using temporal stock market data to identify clusters and identify relationships between clusters (unsupervised learning), and to use financial report data for an indication of stock price (supervised learning).
 
-### Methods
+### Data Collection
 
-The overall process is divided into data acquisition, preparation, machine learning, and evaluation [2]. Before beginning any machine learning itself, potential datasets and features must be identified of interest to use in machine learning. SVMs have proven to be successful in previous endeavors [3] [4] for market prediction and will be used in the project. Random forests will also be used for prediction [5] to compare the two machine learning approaches. Pre-processing the data is crucial to achieving more accurate results [6], so data will be averaged, filtered, and manipulated to extract robust features to help predict overall market trends rather than fixate on transient fluctuations.
+For our data collection, we ended up using the SimFin API for data to use for analysis and machine learning. The API contained a bunch of stock and company financial data but we specifically decided to use the dataset on share prices in order to cluster stocks that move in similar patterns. The SimFin API had simple tutorials on how to extract data, and we were just able to remove columns in the dataset that were unrelated to the goal of our project and as a result, we concentrated on the data in the Open, Close, High, Low columns for our analysis. 
 
-### Potential Results
+At least for very early analysis, we specifically chose about 10 different stocks and for each stock, we took data from the most recent 100 days. For exact implementation of our process to extract and clean data, please refer to the code in our GitHub repository. 
+
+
+### Results
 
 With the two goals of the project, the first is to cluster stock data that moves similarly. This can be used to predict how changes in a single cluster can affect another. For example, if cluster A and cluster B have a negative correlation, if cluster A’s value increases, then it can serve as an indicator that cluster B’s value will decrease. The other aspect is to predict stock price using financial reports. More research needs to be done on the financial aspect to determine how a company’s stock price can be estimated from its stock report. These results will allow for better financial portfolio management, and give better insight into stock investment [7].
 
