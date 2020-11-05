@@ -5,10 +5,11 @@
 
 ### Introduction/Background
 
-
+Aggregate data is available on stock prices and company financial reports that are often used by investment firms to make decisions. With thousands of stocks being traded daily, it is impossible to use all the information manually to make informed decisions [1]. Using a machine learning approach, it is possible to better predict the relations between all stocks that are being traded and to predict market trends.
 
 ### Problem Definition
 
+There are thousands of records of temporal stock market data that can be used to model the stock market. Due to the volatility of the stock market and real-world effects, it is difficult to create an accurate model to predict financial data. The particular issues that will be tackled in this project are tentatively: using the stock’s 100 day averages for opening and closing prices and high and low prices to create clusters and identify relationships (unsupervised learning), and to use financial report data for a future indication of stock price (supervised learning). The independent variable for this project would be the opening and closing stock prices for each company we decide to analyze and the dependent variable would be the clusters that would be created from this data. This clustering analysis can help someone diversify their portfolio and/or be more confident in their decisions when investing in stocks. 
 
 ### Data Collection
 
@@ -18,6 +19,16 @@ At least for very early analysis, we specifically chose about 10 different stock
 
 
 ### Methods
+
+
+#### KMeans - Stock Movement Clustering
+
+For K-Means the goal was to plot each stock based off their features and any stock in the same cluster would then move in the same way.  For example, if Stock A and B are in the same cluster then if A goes up so should B.  The way this was done by taking all the stocks and compiling the data for each stock into a separate array.  We decided to average the columns and then take the difference between High/Low and Open/Close to be our new features.  We then complied that data into one array and then ran that through the K-Means algorithm (with 2 clusters).  We got the centroids locations based off that.  For exact implementations refer to the GitHub repository
+
+#### KNN - General Stock Classification
+
+To use the KNN method we first needed to separate our data out into labels and data.  We used the labels to be the stock itself and the data to be the values of High, Low, Open and Close. After separating out the data we split the data so that some of the data would become training data and the rest would become testing data.  We decided to split it in half, however this can easily be changed if needed.  We then ran the KNN algorithm through the data to get our predictions, using five as the number of neighbors.  We then also took out data and graphed the error based on the K value (we ran this for K values 1-40).  For exact implementations refer to the GitHub repository.
+
 
 #### OneClassSVM - Volatility Classification
 
@@ -36,6 +47,27 @@ No manipulation other than the offset was done to the features as during this ap
 
 
 ### Results
+
+#### KMeans - Stock Movement Clustering
+
+After finding the centroids, we graphed the data on a scatter plot:
+
+![img](https://ibb.co/M5ZFVYk)
+ 
+The orange points represent the centroids, and the blue points represent the averages for the stocks.  The X-axis represents the avg (Open) – avg (Close) for each of the stocks and the Y-axis represents the avg (High) – avg (Low).  The results show only two clusters as we only currently have seven stocks currently being used.  More stocks and clusters will need to be added to make this graph show any sort of results.
+
+
+#### KNN - General Stock Classification
+Given our result from running the KNN algorithm we generated the confusion matrix:
+![img](https://ibb.co/1002sVZ)
+ 
+We then generated our classification report: 
+![img](https://ibb.co/q0NB0J1)
+ 
+Given this, we had fairly good results, and the model was pretty accurate in finding out which stock the data belonged to.  
+
+![img](https://ibb.co/v16q7N4)
+We then graphed the error and found the minimum error would be when the K-value is around 6.  Changing K to 6 instead of 5 would optimize this algorithm and minimize errors.  
 
 #### OneClassSVM - Volatility Classification
 
