@@ -18,19 +18,67 @@ For our data collection, we ended up using the SimFin API for data to use for an
 At least for very early analysis, we specifically chose about 10 different stocks and for each stock, we took data from the most recent 100 days. For exact implementation of our process to extract and clean data, please refer to the code in our GitHub repository. 
 
 
+### Methods
+
+#### OneClassSVM - Volatility Classification
+
+The goal of the OneClassSVM was to take aggregate stock data and determine whether a measurement from a particular day could be considered to be within normal variation or a significant value. Moreover, this data could possibly be used to be an extra indicator of stock volatility. The OneClassSVM from the sklearn was used to implement this unsupervised learning approach. 
+
+Data from 7 stocks were used to create the model to determine if change within a day was normal or statistically significant. These stocks were chosen somewhat randomly based on the size of the companies, and further testing can be done to find more optimal training data. In order to create a uniform basis of comparison, two features were created from the original data set: normalized change and normalized price range. These features essentially removed the impact of actual stock cost and allowed for a greater emphasis on the change itself. 
+
+A few different kernels, gamma, and nu values were evaluated in order to build the most accurate model. The preliminary analysis was validated visually at a high level in order to determine the efficacy of the approach. After building the model, a few different stocks were evaluated to see if the model managed to classify their data well.
+
+#### SVR  - Stock Price Prediction
+
+The SVR was intended to attempt to predict stock prices based on current open, close, high, and low prices. The prediction values for the stock price were achieved by offsetting the stock price data by a number of days in order to pair a current price with a future price. 
+
+No manipulation other than the offset was done to the features as during this approach, a single stock was selected for analysis. This removed the need to normalize for values between stocks. However, averaging/filtering/selecting values from specific timestamps could prove beneficial to this method.
+
+
+
 ### Results
 
-With the two goals of the project, the first is to cluster stock data that moves similarly. This can be used to predict how changes in a single cluster can affect another. For example, if cluster A and cluster B have a negative correlation, if cluster A’s value increases, then it can serve as an indicator that cluster B’s value will decrease. The other aspect is to predict stock price using financial reports. More research needs to be done on the financial aspect to determine how a company’s stock price can be estimated from its stock report. These results will allow for better financial portfolio management, and give better insight into stock investment [7].
+#### OneClassSVM - Volatility Classification
+
+The data used to train the data is displayed below. From a rough visual analysis,  it is easy to tell that there is a particular point where the data becomes less clustered and from this a boundary to separate inlier and outlier points can be created.
+
+![img](https://i.ibb.co/z2nTMDm/rawPlot.png)
+
+![img](https://i.ibb.co/Q685z6s/train-Split.png)
+
+After changing parameters, the above model was chosen as the final model. The inliers are colored in red whereas deviant measurements are colored in blue.
+
+
+
+Whirlpool and GE were selected to evaluate the model. 
+
+![img](https://i.ibb.co/GxdXnZL/WHRvolatility.png)
+
+![https://i.ibb.co/KN4MSKc/GEvolatility.png](https://i.ibb.co/KN4MSKc/GEvolatility.png)
+
+The results do look somewhat promising, although the model does seem to be loose in terms of classifying the normal points. There are points in the above graphs that appear as if they should be classified as outliers but they are still classified by the model as inliers. This could be adjusted by once again changing the model parameters to create for a more strict model. However, in terms of normalization and applying to companies, it seems to work well for at least mid to large size corporations. 
+
+
+
+#### SVR - Stock Price Prediction
+
+Two stocks (AAPL and GE) were tested using the SVR.
+
+![img](https://i.ibb.co/Dtb1Qf0/APPL-svr.png)
+
+![APPL2-svr](https://i.ibb.co/jRV0Xn5/APPL2-svr.png)
+
+The results for Apple stock look decent in training and testing, but in actuality, it is a bad model that does not do well to predict the future. The predicted model simply shows a rough estimate of the real data with a delay of around 10 days. This is more apparent in the case of the GE stock as shown below.
+
+![GE-svr](https://i.ibb.co/NnhmVSV/GE-svr.png)
+
+![GE2-svr](https://i.ibb.co/dDqQLWJ/GE2-svr.png)
+
+Overall the results are poor and the results really give no useful information about stock prices.
+
+
 
 ### Discussion
 
-A lot of the initial time investment will go into researching financial indicators and determining a good financial data set, many of which are readily found online. After developing the preliminary financial knowledge, the data can be feature extracted to use with machine learning techniques. The project checkpoint will be to ensure that the extracted features can be input into ML learning algorithms to determine preliminary results. After this point, pre-processing and different techniques can be applied to generate a more accurate model. For evaluation, it will be worthwhile to perform a holistic overview of the market to determine what external factors could have affected the accuracy of the model.
+The stock market volatility using the OneClassSVM had promising results, especially if the parameters and training data was tuned to better determine whether fluctuations were due to random variation or possibly due to some external events. In this case the normalization of the two features used proved to be useful to create a general model that applies to stocks in the database that were not used to train. The SVR to predict stock prices was not effective and resulted in strongly overfit and useless models. Using only the open, close, high, and low values from the stock prices was not enough to obtain any discernable information to create a model. However, papers (reference the project proposal) suggested that SVMs are indeed useful in predicting stock price. The selected dataset has information from financial statements which provide more parameters which can be used to predict revenue from stocks. Between these two approaches, the approach to predict revenue or stock prices with SVM will be continued as it provides an opportunity for supervised learning. This complements the stock classification portion which takes an unsupervised approach.
 
-### References
-[1] Didur, K. (2018, July 11). Machine learning in finance: Why, what & how. https://towardsdatascience.com/machine-learning-in-finance-why-what-how-d524a2357b56. \
-[2] Lv, D., Yuan, S., Li, M., & Xiang, Y. (2019, April 14). An Empirical Study of Machine Learning Algorithms for Stock Daily Trading Strategy. https://www.hindawi.com/journals/mpe/2019/7816154/. \
-[3] Chen, J. (2010). SVM application of financial time series forecasting using empirical technical indicators. https://ieeexplore.ieee.org/abstract/document/5636430. \
-[4] Tay, F. E. H., & Cao, L. (2001, June 28). Application of support vector machines in financial time series forecasting. Omega. https://www.sciencedirect.com/science/article/pii/S0305048301000263. \
-[5] Zhang, J., Cui, S., Xu, Y., Li, Q., & Li, T. (2017, December 13). A novel data-driven stock price trend prediction system. Expert Systems with Applications.https://www.sciencedirect.com/science/article/pii/S0957417417308485. \
-[6] Patel, J., Shah, S., Thakkar, P., & Kotecha, K. (2014, August 5). Predicting stock and stock price index movement using Trend Deterministic Data Preparation and machine learning techniques. Expert Systems with Applications.https://www.sciencedirect.com/science/article/pii/S0957417414004473. \
-[7] Huang, J., Chai, J. & Cho, S. Deep learning in finance and banking: A literature review and classification. Front. Bus. Res. China 14, 13 (2020). https://doi.org/10.1186/s11782-020-00082-6 \
