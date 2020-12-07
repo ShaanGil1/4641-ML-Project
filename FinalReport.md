@@ -2,6 +2,7 @@
 #### Manas Chakka, Sidhant Bhatia, Shaan Gill, Atman Patel, Thomas Napolitano
 
 [Link to Project Proposal](https://mchakka.github.io/4641-ML-Project/)
+
 [Link to Midterm Report](https://mchakka.github.io/4641-ML-Project/MidtermReport)
 
 [Link to Final Report Presentation Video](https://mchakka.github.io/4641-ML-Project/)
@@ -16,9 +17,14 @@ There are thousands of records of temporal stock market data that can be used to
 
 ### Data Collection
 
-For our data collection, we ended up using the SimFin API for data to use for analysis and machine learning. The API contained a bunch of stock and company financial data but we specifically decided to use the dataset on share prices in order to cluster stocks that move in similar patterns. The SimFin API had simple tutorials on how to extract data, and we were just able to remove columns in the dataset that were unrelated to the goal of our project and as a result, we concentrated on the data in the Open, Close, High, Low columns for our analysis. 
+For our data collection, we ended up using the SimFin API for data to use for analysis and machine learning. The API contained a bunch of stock and company financial data but we specifically decided to use the dataset on share prices in order to cluster stocks that move in similar patterns. The SimFin API had simple tutorials on how to extract data, and we were just able to remove columns in the dataset that were unrelated to the goal of our project. Most of our project is focused on data in the **Share Prices Dataset** but our SVR part uses **Income and Balance Sheet Datasets** and that's discussed in the SVR Methods section. 
 
-At least for very early analysis, we specifically chose about 10 different stocks and for each stock, we took data from the most recent 100 days. We plan to scale this up as we work on this project and possibly building out testing and training datasets. For exact implementation of our process to extract and clean data, please refer to the code in our GitHub repository.
+Here's an overview of the Share Prices Dataset
+![original-data](https://i.ibb.co/MgfV3jW/original-data.png)
+
+At least for very early analysis, we specifically chose about 10 different stocks and for each stock, we took data from the most recent 100 days. As we progressed in the project, we ended up using about 100 stock tickers for analysis, specifically for KMeans, KNN, and OneClassSVM. However as we scaled up our data that we used for this project, we had to clean the dataset. This included removing rows that had any NaNs, removing unnecessary columns, and etc. 
+
+Our project specifically focused on the High, Low, Open, and Close columns of the dataset. The next section will go in-depth on how each of these columns were used and in our analysis. For exact implementation of our process to extract and clean data, please refer to the code in our GitHub repository.
 
 
 ### Methods
@@ -116,8 +122,6 @@ The results for Apple stock look decent in training and testing, but in actualit
 ![GE2-svr](https://i.ibb.co/dDqQLWJ/GE2-svr.png)
 
 Overall the results are poor and the results really give no useful information about stock prices.
-
-
 
 #### SVR - Log Return Prediction
 
