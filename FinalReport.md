@@ -19,8 +19,11 @@ There are thousands of records of temporal stock market data that can be used to
 
 For our data collection, we ended up using the SimFin API for data to use for analysis and machine learning. The API contained a bunch of stock and company financial data but we specifically decided to use the dataset on share prices in order to cluster stocks that move in similar patterns. The SimFin API had simple tutorials on how to extract data, and we were just able to remove columns in the dataset that were unrelated to the goal of our project. Most of our project is focused on data in the **Share Prices Dataset** but our SVR part uses **Income and Balance Sheet Datasets** and that's discussed in the SVR Methods section. 
 
-Here's an overview of the Share Prices Dataset
-![original-data](https://i.ibb.co/MgfV3jW/original-data.png)
+Here's an metadata overview of the Share Prices Dataset
+![original-data](https://i.ibb.co/BCBxCjr/metadata.png)
+
+Here's an sample section of the dataset as well in CSV format
+![sample-data](https://i.ibb.co/BCBxCjr/metadata.png)
 
 At least for very early analysis, we specifically chose about 10 different stocks and for each stock, we took data from the most recent 100 days. As we progressed in the project, we ended up using about 100 stock tickers for analysis, specifically for KMeans, KNN, and OneClassSVM. However as we scaled up our data that we used for this project, we had to clean the dataset. This included removing rows that had any NaNs, removing unnecessary columns, and etc. 
 
