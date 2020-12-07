@@ -23,7 +23,7 @@ Here's an metadata overview of the Share Prices Dataset
 ![original-data](https://i.ibb.co/BCBxCjr/metadata.png)
 
 Here's an sample section of the dataset as well in CSV format
-![sample-data](https://i.ibb.co/BCBxCjr/metadata.png)
+![sample-data](https://i.ibb.co/VpnFVN5/sample.png)
 
 At least for very early analysis, we specifically chose about 10 different stocks and for each stock, we took data from the most recent 100 days. As we progressed in the project, we ended up using about 100 stock tickers for analysis, specifically for KMeans, KNN, and OneClassSVM. However as we scaled up our data that we used for this project, we had to clean the dataset. This included removing rows that had any NaNs, removing unnecessary columns, and etc. 
 
