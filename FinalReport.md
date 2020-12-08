@@ -5,7 +5,7 @@
 
 [Link to Midterm Report](https://mchakka.github.io/4641-ML-Project/MidtermReport)
 
-[Link to Final Report Presentation Video](https://mchakka.github.io/4641-ML-Project/)
+[Link to Final Report Presentation Video](https://youtu.be/C546Dlojync)
 
 ### Introduction/Background
 
